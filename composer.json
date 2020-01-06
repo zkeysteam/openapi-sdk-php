@@ -1,0 +1,19 @@
+{
+    "name": "zkeysteam/openapi-sdk-php",
+    "description": "ZKEYS OpenAPI SDK for PHP",
+    "homepage": "https://www.zkeys.com/",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "ZkeysTeam",
+            "homepage": "http://www.zkeys.com"
+        }
+    ],
+    "require": {
+        "php":">=5.3"
+    },
+    "autoload": {
+        "psr-4": {"Zkeys\\OpenApi\\": "src/OpenApi"}
+    }
+}
