@@ -15,7 +15,7 @@ ZKEYS OpenAPI是ZKEYS开放API，目前提供三网短信、三要素/四要素�
 	
 2. 下载SDK源码，在您的代码中引入SDK目录下的`autoload.php`文件：
 
-    require_once '/path/to/oss-sdk/autoload.php';
+    require_once '/path/to/openapi-sdk-php/autoload.php';
 	
 ## 快速使用
 
