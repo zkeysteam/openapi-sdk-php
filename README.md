@@ -11,7 +11,7 @@ ZKEYS OpenAPI是ZKEYS开放API，目前提供三网短信、三要素/四要素�
 
 1. 如果您通过composer管理您的项目依赖，可以在你的项目根目录运行：
 
-	$ composer require zkeys-team/openapi-sdk-php
+	$ composer require zkeysteam/openapi-sdk-php
 	
 2. 下载SDK源码，在您的代码中引入SDK目录下的`autoload.php`文件：
 
