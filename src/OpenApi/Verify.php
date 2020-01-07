@@ -1,11 +1,5 @@
 <?php
-/**
- * @link      https://www.niaoyun.com/
- * @copyright Copyright © 2020 NiaoYun.com. All Rights Reserved. 小鸟云 版权所有
- * User: smallfly
- * Date: 2020/1/7
- * Time: 14:28
- */
+
 namespace Zkeys\OpenApi;
 
 use Zkeys\OpenApi\helps\CurlHelper;
@@ -19,16 +13,18 @@ class Verify extends Base
 
     /**
      * 实名认证3元素
+     *
      * @param VerifyOption $verifyOption
+     *
      * @return bool
      */
     public function bankThreeParams(VerifyOption $verifyOption)
     {
-        $bizContent = [
+        $bizContent = array(
             'mobile'    => $verifyOption->getMobile(),
             'real_name' => $verifyOption->getRealName(),
             'id_card'   => $verifyOption->getIdCard(),
-        ];
+        );
 
         $accessToken = $verifyOption->getAccessToken();
         if (empty($accessToken)) {
@@ -37,7 +33,7 @@ class Verify extends Base
             return false;
         }
 
-        $data         = [
+        $data         = array(
             'app_id'       => $verifyOption->getAppId(),
             'access_token' => $accessToken,
             'method'       => self::THREE_ELEMENT,
@@ -45,7 +41,7 @@ class Verify extends Base
             'version'      => 'v201903',
             'biz_content'  => json_encode($bizContent),
             'timestamp'    => time(),
-        ];
+        );
         $str          = $this->buildQuery($data);
         $data['sign'] = $this->getSign($str, $verifyOption->getSecretKey());
 
@@ -56,17 +52,19 @@ class Verify extends Base
 
     /**
      * 实名认证4元素
+     *
      * @param VerifyOption $verifyOption
+     *
      * @return bool
      */
     public function bankFourParams(VerifyOption $verifyOption)
     {
-        $bizContent = [
+        $bizContent = array(
             'mobile'       => $verifyOption->getMobile(),
             'real_name'    => $verifyOption->getRealName(),
             'id_card'      => $verifyOption->getIdCard(),
             'bank_account' => $verifyOption->getBankAccount(),
-        ];
+        );
 
         $accessToken = $verifyOption->getAccessToken();
         if (empty($accessToken)) {
@@ -75,7 +73,7 @@ class Verify extends Base
             return false;
         }
 
-        $data         = [
+        $data         = array(
             'app_id'       => $verifyOption->getAppId(),
             'access_token' => $accessToken,
             'method'       => self::FOUR_ELEMENT,
@@ -83,7 +81,7 @@ class Verify extends Base
             'version'      => 'v201903',
             'biz_content'  => json_encode($bizContent),
             'timestamp'    => time(),
-        ];
+        );
         $str          = $this->buildQuery($data);
         $data['sign'] = $this->getSign($str, $verifyOption->getSecretKey());
 

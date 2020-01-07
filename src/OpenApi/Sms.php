@@ -1,11 +1,5 @@
 <?php
-/**
- * @link      https://www.niaoyun.com/
- * @copyright Copyright © 2020 NiaoYun.com. All Rights Reserved. 小鸟云 版权所有
- * User: smallfly
- * Date: 2020/1/6
- * Time: 15:10
- */
+
 namespace Zkeys\OpenApi;
 
 use Zkeys\OpenApi\helps\CurlHelper;
@@ -19,17 +13,19 @@ class Sms extends Base
 
     /**
      * 发送短信(短信模板形式)
+     *
      * @param SmsOption $smsOption
+     *
      * @return array|bool|mixed
      */
     public function tplSend(SmsOption $smsOption)
     {
-        $bizContent = [
+        $bizContent = array(
             'mobiles'    => $smsOption->getMmobiles(),
             'tpl_code'   => $smsOption->getTplCode(),
             'tpl_params' => $smsOption->getTplParams(),
             'sign_name'  => $smsOption->getSignName(),
-        ];
+        );
 
         $accessToken = $smsOption->getAccessToken();
         if (empty($accessToken)) {
@@ -38,7 +34,7 @@ class Sms extends Base
             return false;
         }
 
-        $data         = [
+        $data         = array(
             'app_id'       => $smsOption->getAppId(),
             'access_token' => $accessToken,
             'method'       => self::SENDER,
@@ -46,7 +42,7 @@ class Sms extends Base
             'version'      => 'v201903',
             'biz_content'  => json_encode($bizContent),
             'timestamp'    => time(),
-        ];
+        );
         $str          = $this->buildQuery($data);
         $data['sign'] = $this->getSign($str, $smsOption->getSecretKey());
 
@@ -57,17 +53,19 @@ class Sms extends Base
 
     /**
      * 发送短信(短信内容形式)
+     *
      * @param SmsOption $smsOption
+     *
      * @return bool
      */
     public function contentSend(SmsOption $smsOption)
     {
-        $bizContent = [
+        $bizContent = array(
             'mobiles'      => $smsOption->getMmobiles(),
             'type'         => $smsOption->getType(),
             'send_content' => $smsOption->getSendContent(),
             'sign_name'    => $smsOption->getSignName(),
-        ];
+        );
 
         $accessToken = $smsOption->getAccessToken();
         if (empty($accessToken)) {
@@ -76,7 +74,7 @@ class Sms extends Base
             return false;
         }
 
-        $data         = [
+        $data         = array(
             'app_id'       => $smsOption->getAppId(),
             'access_token' => $accessToken,
             'method'       => self::SCONTENT,
@@ -84,7 +82,7 @@ class Sms extends Base
             'version'      => 'v201903',
             'biz_content'  => json_encode($bizContent),
             'timestamp'    => time(),
-        ];
+        );
         $str          = $this->buildQuery($data);
         $data['sign'] = $this->getSign($str, $smsOption->getSecretKey());
 
@@ -95,15 +93,17 @@ class Sms extends Base
 
     /**
      * 查询短信发送情况
+     *
      * @param SmsOption $smsOption
+     *
      * @return bool
      */
     public function query(SmsOption $smsOption)
     {
-        $bizContent = [
+        $bizContent = array(
             'mobiles' => $smsOption->getMmobiles(),
-            'biz_id'  => $smsOption->getBizId()
-        ];
+            'biz_id'  => $smsOption->getBizId(),
+        );
 
         $accessToken = $smsOption->getAccessToken();
         if (empty($accessToken)) {
@@ -112,7 +112,7 @@ class Sms extends Base
             return false;
         }
 
-        $data         = [
+        $data         = array(
             'app_id'       => $smsOption->getAppId(),
             'access_token' => $accessToken,
             'method'       => self::SQUERY,
@@ -120,7 +120,7 @@ class Sms extends Base
             'version'      => 'v201903',
             'biz_content'  => json_encode($bizContent),
             'timestamp'    => time(),
-        ];
+        );
         $str          = $this->buildQuery($data);
         $data['sign'] = $this->getSign($str, $smsOption->getSecretKey());
 

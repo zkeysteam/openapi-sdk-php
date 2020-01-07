@@ -1,11 +1,5 @@
 <?php
-/**
- * @link      https://www.niaoyun.com/
- * @copyright Copyright © 2020 NiaoYun.com. All Rights Reserved. 小鸟云 版权所有
- * User: smallfly
- * Date: 2020/1/7
- * Time: 15:46
- */
+
 namespace Zkeys\OpenApi;
 
 use Zkeys\OpenApi\helps\CurlHelper;
@@ -17,16 +11,18 @@ class Vnc extends Base
 
     /**
      * 获取VNC地址
+     *
      * @param VncOption $vncOption
+     *
      * @return bool
      */
     public function getVncUrl(VncOption $vncOption)
     {
-        $bizContent = [
+        $bizContent = array(
             'ip'   => $vncOption->getIp(),
             'port' => $vncOption->getPort(),
             'lang' => 'zh-cn',
-        ];
+        );
 
         $accessToken = $vncOption->getAccessToken();
         if (empty($accessToken)) {
@@ -35,7 +31,7 @@ class Vnc extends Base
             return false;
         }
 
-        $data         = [
+        $data         = array(
             'app_id'       => $vncOption->getAppId(),
             'access_token' => $accessToken,
             'method'       => self::VNC,
@@ -43,7 +39,7 @@ class Vnc extends Base
             'version'      => 'v201903',
             'biz_content'  => json_encode($bizContent),
             'timestamp'    => time(),
-        ];
+        );
         $str          = $this->buildQuery($data);
         $data['sign'] = $this->getSign($str, $vncOption->getSecretKey());
 

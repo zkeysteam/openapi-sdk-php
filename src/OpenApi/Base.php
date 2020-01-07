@@ -1,12 +1,7 @@
 <?php
-/**
- * @link      https://www.niaoyun.com/
- * @copyright Copyright © 2020 NiaoYun.com. All Rights Reserved. 小鸟云 版权所有
- * User: smallfly
- * Date: 2020/1/6
- * Time: 15:10
- */
+
 namespace Zkeys\OpenApi;
+
 class Base
 {
     // 接口请求连接
@@ -24,7 +19,9 @@ class Base
 
     /**
      * 解析接口返回数据
+     *
      * @param $data
+     *
      * @return bool
      */
     protected function analysis($data)
@@ -41,7 +38,9 @@ class Base
 
     /**
      * 查询参数排序 a-z
+     *
      * @param $query
+     *
      * @return string|null
      */
     protected function buildQuery($query)
@@ -65,8 +64,10 @@ class Base
 
     /**
      * 获取签名
+     *
      * @param $str
      * @param $secretKey
+     *
      * @return string
      */
     protected function getSign($str, $secretKey)
@@ -94,7 +95,9 @@ class Base
 
     /**
      * 处理返回结果
+     *
      * @param $result
+     *
      * @return bool
      */
     protected function handleResult($result)

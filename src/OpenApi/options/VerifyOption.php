@@ -1,12 +1,7 @@
 <?php
-/**
- * @link      https://www.niaoyun.com/
- * @copyright Copyright © 2020 NiaoYun.com. All Rights Reserved. 小鸟云 版权所有
- * User: smallfly
- * Date: 2020/1/7
- * Time: 14:40
- */
+
 namespace Zkeys\OpenApi\options;
+
 class VerifyOption extends BaseOption
 {
     // 手机号码
@@ -23,7 +18,9 @@ class VerifyOption extends BaseOption
 
     /**
      * 设置手机号码
+     *
      * @param $mobile
+     *
      * @return $this
      */
     public function setMobile($mobile)
@@ -35,7 +32,9 @@ class VerifyOption extends BaseOption
 
     /**
      * 设置真实姓名
+     *
      * @param $realName
+     *
      * @return $this
      */
     public function setRealName($realName)
@@ -47,7 +46,9 @@ class VerifyOption extends BaseOption
 
     /**
      * 设置身份证号码
+     *
      * @param $idCard
+     *
      * @return $this
      */
     public function setIdCard($idCard)
@@ -59,7 +60,9 @@ class VerifyOption extends BaseOption
 
     /**
      * 设置银行卡
+     *
      * @param $bankAccount
+     *
      * @return $this
      */
     public function setBankAccount($bankAccount)

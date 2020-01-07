@@ -1,12 +1,7 @@
 <?php
-/**
- * @link      https://www.niaoyun.com/
- * @copyright Copyright © 2020 NiaoYun.com. All Rights Reserved. 小鸟云 版权所有
- * User: smallfly
- * Date: 2020/1/6
- * Time: 15:10
- */
+
 namespace Zkeys\OpenApi\options;
+
 class SmsOption extends BaseOption
 {
     // 手机号码(用英文逗号隔开)
@@ -16,7 +11,7 @@ class SmsOption extends BaseOption
     private $tplCode = '';
 
     // 模板参数(数组信息)
-    private $tplParams = [];
+    private $tplParams = array();
 
     // 短信类型 1、验证码/通知类 3、营销类
     private $type = '';
@@ -29,7 +24,9 @@ class SmsOption extends BaseOption
 
     /**
      * 设置手机号
+     *
      * @param $mobiles
+     *
      * @return $this
      */
     public function setMmobiles($mobiles)
@@ -41,7 +38,9 @@ class SmsOption extends BaseOption
 
     /**
      * 设置短信模板
+     *
      * @param $tplCode
+     *
      * @return $this
      */
     public function setTplCode($tplCode)
@@ -53,7 +52,9 @@ class SmsOption extends BaseOption
 
     /**
      * 设置模板参数
+     *
      * @param $tplParams
+     *
      * @return $this
      */
     public function setTplParams($tplParams)
@@ -65,7 +66,9 @@ class SmsOption extends BaseOption
 
     /**
      * 设置短信类型
+     *
      * @param $type
+     *
      * @return $this
      */
     public function setType($type)
@@ -77,7 +80,9 @@ class SmsOption extends BaseOption
 
     /**
      * 设置短信内容
+     *
      * @param $sendContent
+     *
      * @return $this
      */
     public function setSendContent($sendContent)
@@ -89,7 +94,9 @@ class SmsOption extends BaseOption
 
     /**
      * 设置查询时提交的批次号
+     *
      * @param $bizId
+     *
      * @return $this
      */
     public function setBizId($bizId)

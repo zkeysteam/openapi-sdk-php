@@ -1,5 +1,6 @@
 <?php
-namespace Zkeys\OpenApi\demo;
+
+namespace Zkeys\demo;
 
 use Zkeys\OpenApi\Auth;
 use Zkeys\OpenApi\options\AuthOption;
@@ -232,8 +233,10 @@ class Index
 
     /**
      * 公共获取access_token
+     *
      * @param $secretId
      * @param $secretKey
+     *
      * @return mixed
      */
     public function publicGetAccessToken($secretId, $secretKey)

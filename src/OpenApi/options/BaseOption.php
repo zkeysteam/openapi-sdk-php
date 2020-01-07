@@ -1,12 +1,7 @@
 <?php
-/**
- * @link      https://www.niaoyun.com/
- * @copyright Copyright © 2020 NiaoYun.com. All Rights Reserved. 小鸟云 版权所有
- * User: smallfly
- * Date: 2020/1/7
- * Time: 14:41
- */
+
 namespace Zkeys\OpenApi\options;
+
 class BaseOption
 {
     // appID
@@ -26,7 +21,9 @@ class BaseOption
 
     /**
      * 设置appID
+     *
      * @param $appID
+     *
      * @return $this
      */
     public function setAppId($appId)
@@ -38,7 +35,9 @@ class BaseOption
 
     /**
      * 设置Secret Id
+     *
      * @param $secretId
+     *
      * @return $this
      */
     public function setSecretId($secretId)
@@ -50,7 +49,9 @@ class BaseOption
 
     /**
      * 设置Secret Key
+     *
      * @param $secretKey
+     *
      * @return $this
      */
     public function setSecretKey($secretKey)
@@ -62,7 +63,9 @@ class BaseOption
 
     /**
      * 设置access_token
+     *
      * @param $accessToken
+     *
      * @return $this
      */
     public function setAccessToken($accessToken)
@@ -74,7 +77,9 @@ class BaseOption
 
     /**
      * 设置签名
+     *
      * @param $signName
+     *
      * @return $this
      */
     public function setSignName($signName)
