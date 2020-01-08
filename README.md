@@ -18,4 +18,24 @@ ZKEYS OpenAPI是ZKEYS开放API，目前提供三网短信、三要素/四要素�
     require_once '/path/to/openapi-sdk-php/autoload.php';
 	
 ## 快速使用
+获取 access_token
+```
+use Zkeys\OpenApi\Auth;
+use Zkeys\OpenApi\options\AuthOption;
 
+$authOption = new AuthOption();
+$authOption->setSecretId('NuDbL3WsJzfFZR8y');// 设置Secret Id
+$authOption->setSecretKey('JvPuOlre5ZjA61x8hCyTP2zYvfJnKaRL');// 设置Secret Key
+$auth = new Auth();
+
+$result = $auth->getToken($authOption);
+
+if (!$result) {
+    echo $auth->getError();
+}
+
+var_export($result);// 正常返回结果： array ( 'access_token' => '43a759e123477bc9ecbaa7b58ee6fa70', 'expires_in' => 7200 )
+
+```
+
+更多使用请参考 [测试用例](https://github.com/zkeysteam/openapi-sdk-php/blob/master/demo/Index.php)
