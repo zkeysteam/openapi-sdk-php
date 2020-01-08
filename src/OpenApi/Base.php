@@ -5,7 +5,7 @@ namespace Zkeys\OpenApi;
 class Base
 {
     // 接口请求连接
-    const AUTH_URL = 'https://local_api.zkeys.com/';
+    const AUTH_URL = 'https://api.zkeys.com/';
 
     const GATEWAY = 'gateway.do';
 
